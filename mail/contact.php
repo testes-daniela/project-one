@@ -16,13 +16,13 @@ $phone     = $_POST['subject'];
 $comments = $_POST['comments'];
 
 if(trim($fname) == '') {
-	echo '<div class="alert alert-error">You must enter your first name.</div>';
+	echo '<div class="alert alert-error">Informe seu nome.</div>';
 	exit();
 } else if(trim($email) == '') {
-	echo '<div class="alert alert-error">You must enter email address.</div>';
+	echo '<div class="alert alert-error">Informe seu email.</div>';
 	exit();
 } else if(!isEmail($email)) {
-	echo '<div class="alert alert-error">You must enter a valid email address.</div>';
+	echo '<div class="alert alert-error">Email inválido.</div>';
 	exit();
 }
 
@@ -43,7 +43,7 @@ $address = "danielamaradms@gmail.com";
 // i.e. The standard subject will appear as, "You've been contacted by John Doe."
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
-$e_subject = 'Contact Form';
+$e_subject = 'Fale conosco - Autonove Multimarcas';
 
 
 // Configuration option.
@@ -59,16 +59,16 @@ $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
 $headers = "From: $email" . PHP_EOL;
 $headers .= "Reply-To: $email" . PHP_EOL;
 $headers .= "MIME-Version: 1.0" . PHP_EOL;
-$headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
+$headers .= "Content-type: text/plain; charset=8859-1" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-if(mail($address, $e_subject, $msg, $headers)) {
+if(mail($address, $e_subject, $msg, $headers, $email)) {
 
 	// Email has sent successfully, echo a success page.
 
 	echo "<div class='alert alert-success'>";
-	echo "<h3>Email Sent Successfully.</h3><br>";
-	echo "<p>Thank you <strong>$name</strong>, your message has been submitted to us.</p>";
+	echo "<h3>Email Enviado com Sucesso!</h3><br>";
+	echo "<p>Obrigado pelo contato <strong>$fname</strong>, aguarde retorno de nossa equipe.</p>";
 	echo "</div>";
 
 } else {
