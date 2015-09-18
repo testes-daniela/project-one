@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
   ================================================== -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Contato | Autonove Multimarcas</title>
+    <title>Empresa | Autonove Multimarcas</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -69,8 +69,16 @@
                 </div>
             </div>
         </div>
-        <div class="page-header parallax">
-            <div id="contact-map" style="width:100%;height:300px"></div>
+        <div class="hero-area">
+            <!-- Start Hero Slider -->
+            <div class="hero-slider heroflex flexslider clearfix" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-speed="7000" data-pause="yes">
+                <ul class="slides">
+                    <li class="parallax" style="background-image:url(images/loja3.jpg);"></li>
+                    <li class="parallax" style="background-image:url(images/loja1.jpg);"></li>
+                    <li class="parallax" style="background-image:url(images/loja4.jpg);"></li>
+                </ul>
+            </div>
+            <!-- End Hero Slider -->
         </div>
         <!-- Utiity Bar -->
         <div class="utility-bar">
@@ -94,52 +102,25 @@
             <div id="content" class="content full">
                 <div class="container">
                     <div class="listing-header margin-40">
-                        <h2>Fale Conosco</h2>
+                        <h2>Autonove Multimarcas</h2>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-4">
-                            <i class="fa fa-home"></i></span> <b>Autonove Multimarcas</b>
-                            <br> Av. Engenheiro Caetano Alvares, 4099
-                            <br> Imirim - São Paulo - SP
-                            <br>
-                            <br>
-                            <i class="fa fa-phone"></i> <b>(11) 2208-7094 </b>
-                            <br>
-                            <i class="fa fa-phone"></i> <b>(11) 3856-9247 </b>
-                            <br>
-                            <i class="fa fa-envelope"></i> <a href="mailto:vendas@autonove.com.br">vendas@autonove.com.br</a>
-                            <br>
-                            <br>
-                            <i class="fa fa-home"></i> <b>Seg - Sex: 9:00h - 18:00h</b>
-                            <br> Sábados: 9:00h - 13:00h
-                        </div>
-                        <div class="col-md-9 col-sm-8">
-                            <form method="post" id="contactform" name="contactform" class="contact-form clearfix" action="mail/contact.php">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <input type="text" id="fname" name="First Name" class="form-control input-lg" placeholder="Primeiro Nome*">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" id="lname" name="Last Name" class="form-control input-lg" placeholder="Último Nome">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" id="email" name="email" class="form-control input-lg" placeholder="Email*">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Telefone">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="form-group">
-                                            <textarea cols="6" rows="8" id="comments" name="comments" class="form-control input-lg" placeholder="Mensagem"></textarea>
-                                        </div>
-                                        <input id="submit" name="submit" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar">
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="clearfix"></div>
-                            <div id="message"></div>
+                    <div>
+                        <p>A Autonove Multimarcas está localizada na Avenida Engenheiro Caetano Alvares, 4099, uma conhecida avenida do bairro de Santana em São Paulo. Nossa empresa tem se consagrado como uma das agências de automóveis de grande prestígio na região, somos especializados na venda de veículos novos e usados, nacionais e importados. Com certeza você não só apreciará como irá comprar seu semi-novo conosco. Todos nossos veículos são revisados criteriosamente, possibilitando dar aos nossos clientes tranquilidade na hora da compra. Não perca tempo! Compre seu semi-novo com quem mais entende do assunto.</p>
+                        <div>
+                            <h3>Missão</h3>
+                            <p>Ser uma das melhores revendas de veículos novos e seminovos do Brasil.</p>
+                            <h3>Visão</h3>
+                            <p>Revolucionar a maneira de vender veículos às pessoas e empresas, oferecendo soluções inovadoras, superando assim as expectativas dos nossos clientes e colaboradores.</p>
+                            <h3>Valores</h3>
+                            <p>
+                                - Profissionalismo
+                                <br> - Ética
+                                <br> - Honestidade
+                                <br> - Transparência
+                                <br> - Responsabilidade
+                                <br> - Comprometimento
+                                <br> - Respeito a Deus sobre todas as coisas
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -223,85 +204,6 @@
     <!-- All Scripts -->
     <script src="vendor/flexslider/js/jquery.flexslider.js"></script>
     <!-- FlexSlider -->
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-        var geocoder = new google.maps.Geocoder();
-        var address = "Av. Engenheiro Caetano Alvares, 4099 Imirim - São Paulo - SP"; //Add your address here, all on one line.
-        var latitude;
-        var longitude;
-        var color = "#ffffff"; //Set your tint color. Needs to be a hex value.
-
-        function getGeocode() {
-            geocoder.geocode({
-                'address': address
-            }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    latitude = results[0].geometry.location.lat();
-                    longitude = results[0].geometry.location.lng();
-                    initGoogleMap();
-                }
-            });
-        }
-
-        function initGoogleMap() {
-            var styles = [
-                {
-                    stylers: [
-                        {
-                            saturation: -100
-                        }
-	      ]
-	    }
-	];
-
-            var options = {
-                mapTypeControlOptions: {
-                    mapTypeIds: ['Styled']
-                },
-                center: new google.maps.LatLng(latitude, longitude),
-                zoom: 13,
-                scrollwheel: false,
-                navigationControl: false,
-                mapTypeControl: false,
-                zoomControl: true,
-                disableDefaultUI: true,
-                mapTypeId: 'Styled'
-            };
-            var div = document.getElementById('contact-map');
-            var map = new google.maps.Map(div, options);
-            marker = new google.maps.Marker({
-                map: map,
-                draggable: false,
-                animation: google.maps.Animation.DROP,
-                position: new google.maps.LatLng(latitude, longitude)
-            });
-            var styledMapType = new google.maps.StyledMapType(styles, {
-                name: 'Styled'
-            });
-            map.mapTypes.set('Styled', styledMapType);
-
-            var infowindow = new google.maps.InfoWindow({
-                content: "<div class='iwContent'>" + address + "</div>"
-            });
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.open(map, marker);
-            });
-
-
-            bounds = new google.maps.LatLngBounds(
-                new google.maps.LatLng(-23.487961, -46.648465),
-                new google.maps.LatLng(23.487961, 46.648465));
-
-            rect = new google.maps.Rectangle({
-                bounds: bounds,
-                fillColor: color,
-                fillOpacity: 0.2,
-                strokeWeight: 0,
-                map: map
-            });
-        }
-        google.maps.event.addDomListener(window, 'load', getGeocode);
-    </script>
 </body>
 
 </html>
